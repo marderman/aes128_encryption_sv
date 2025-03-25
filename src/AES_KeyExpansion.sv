@@ -23,7 +23,7 @@ module AES_KeyExpansion (
             sbox_rom[word[15:8]],  sbox_rom[word[7:0]]};
   endfunction
 
-  // Rcon table
+  // Move rcon_table to a constant definition
   localparam logic [31:0] rcon_table [1:10] = '{
     32'h01000000, 32'h02000000, 32'h04000000, 32'h08000000, 32'h10000000,
     32'h20000000, 32'h40000000, 32'h80000000, 32'h1B000000, 32'h36000000

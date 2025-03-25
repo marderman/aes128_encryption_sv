@@ -57,6 +57,14 @@ module AES_ShiftRows (
   assign shifted_row3 = { row3[7:0],  row3[31:8]  };
 
   // Reassemble the state in column-major order.
+  // New column0: { shifted_row0[31:24], shifted_row1[31:24],
+  //                shifted_row2[31:24], shifted_row3[31:24] }
+  // New column1: { shifted_row0[23:16], shifted_row1[23:16],
+  //                shifted_row2[23:16], shifted_row3[23:16] }
+  // New column2: { shifted_row0[15:8],  shifted_row1[15:8],
+  //                shifted_row2[15:8],  shifted_row3[15:8] }
+  // New column3: { shifted_row0[7:0],   shifted_row1[7:0],
+  //                shifted_row2[7:0],   shifted_row3[7:0] }
   assign state_out = { shifted_row0[31:24], shifted_row1[31:24],
                        shifted_row2[31:24], shifted_row3[31:24],
                        shifted_row0[23:16], shifted_row1[23:16],

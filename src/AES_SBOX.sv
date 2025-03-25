@@ -10,7 +10,7 @@ module AES_SBOX (
         $readmemh("aes_sbox.mem", sbox_rom);
     end
     
-    // Combinational lookup
+    // Combinational lookup - no clock needed
     assign sbox_out = sbox_rom[sbox_in];
     
 endmodule
