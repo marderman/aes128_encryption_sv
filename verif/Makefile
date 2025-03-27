@@ -1,6 +1,6 @@
 SRC_PATH = ../src
 MEM_FILE = $(SRC_PATH)/aes_sbox.mem
-TESTS = AES_AddRoundKey_tb AES_KeyExpansion_tb AES_MixColumns_tb AES_SBOX_tb AES_ShiftRows_tb AES_SubBytes_tb AES_Core_tb
+TESTS = ALU_tb RoundKeyMemory_tb RAM_tb DMA_tb AES_AddRoundKey_tb AES_KeyExpansion_tb AES_MixColumns_tb AES_SBOX_tb AES_ShiftRows_tb AES_SubBytes_tb AES_Core_tb
 
 all: simulate_all
 
