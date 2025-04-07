@@ -73,9 +73,6 @@ module DMA #(
                 IDLE: begin
                     if (start) begin
                         done <= 1'b0;
-                        if (mode == 1'b0) begin // Load mode
-                            data_out <= (src_sel == 1'b0) ? data_out_rk_mem : data_out_state_ram;
-                        end
                     end
                 end
                 WAIT_1: begin
@@ -124,7 +121,6 @@ module DMA #(
             end
             DONE: begin
                 next_state = IDLE;
-                done = 1'b1;
             end
         endcase
     end
